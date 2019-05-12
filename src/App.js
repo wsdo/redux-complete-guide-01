@@ -8,15 +8,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          【redux完全指南】系列1：入门到会用
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://shudong.wang"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          跟着stark wang 学redux
         </a>
       </header>
     </div>
