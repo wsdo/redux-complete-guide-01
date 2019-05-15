@@ -5,9 +5,14 @@ import { eat, hungry, eatAsync, getArticle} from './stark.redux'
 import { connect } from 'react-redux'
 class App extends React.Component {
   render () {
-    const {num, eat, hungry , eatAsync,getArticle} = this.props
+    const {num, eat, hungry , eatAsync, getArticle, list} = this.props
     return (
       <div className='App'>
+          {list.map((item,index)=>{
+            return <div key={index}>
+              {item.title}
+            </div>
+          })}
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <p>
@@ -45,5 +50,5 @@ class App extends React.Component {
 
 // const actionCreators = {eat,hungry}
 export default connect((state)=>{
-  return {num:state}
+  return {num: state.num,list:state.list}
 },{eat,hungry,eatAsync,getArticle})(App)

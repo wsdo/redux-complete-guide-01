@@ -3,16 +3,25 @@ import axios from 'axios'
 
 const EAT = 'eat'
 const HUNGRY = 'hungry'
+const ARTICLE_LIST = 'article_list'
+
+const initState = {
+  num: 160,
+  list: []
+}
 
 // reducer
-export const weight = (state = 160 , action) => {
+export const weight = (state = initState , action) => {
   switch (action.type) {
     case EAT:
-      return state + 10
+    return {...state, num: state.num + 10}
     case HUNGRY:
-      return state - 10
+    return {...state, num: state.num - 10}
+    case ARTICLE_LIST:
+    console.log('action',action)
+      return {...state, list: action.playload.article}
     default:
-      return 160
+      return initState
   }
 }
 
@@ -42,11 +51,10 @@ export const getArticle = () =>{
   return dispatch =>{
     setTimeout(()=>{
       // dispatch(eat('煎饼')) 
-      dispatch(()=>{
         axios.get('/v1/article/list').then(res=>{
           console.log('article',res)
+          dispatch({type:ARTICLE_LIST,playload:res.data})
         })
-      }) 
     },2000)
   }
 }
