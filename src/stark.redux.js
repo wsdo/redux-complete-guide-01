@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
+import axios from 'axios'
 
 const EAT = 'eat'
 const HUNGRY = 'hungry'
@@ -18,14 +19,34 @@ export const weight = (state = 160 , action) => {
 // const store = createStore(weight)
 
 // action
-export const eat = () => {
-  console.log('stark wang 正在吃山珍海味')
+export const eat = (data) => {
+  console.log('stark wang 正在吃'+ data)
   return {type: EAT}
 }
 
 export const hungry = () => {
   console.log('饿了一天')
   return {type: HUNGRY}
+}
+
+export const eatAsync = () =>{
+  return dispatch =>{
+    setTimeout(()=>{
+      // dispatch(eat('煎饼')) 
+      dispatch({type: EAT}) 
+    },2000)
+  }
+}
+
+export const getArticle = () =>{
+  return dispatch =>{
+    setTimeout(()=>{
+      // dispatch(eat('煎饼')) 
+      dispatch(()=>{
+        axios.get('http://api.shudong.wang/v1/article/list')
+      }) 
+    },2000)
+  }
 }
 
 

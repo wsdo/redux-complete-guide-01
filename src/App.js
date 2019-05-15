@@ -1,11 +1,11 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { eat, hungry } from './stark.redux'
+import { eat, hungry, eatAsync, getArticle} from './stark.redux'
 import { connect } from 'react-redux'
 class App extends React.Component {
   render () {
-    const {num, eat, hungry} = this.props
+    const {num, eat, hungry , eatAsync,getArticle} = this.props
     return (
       <div className='App'>
         <header className='App-header'>
@@ -24,8 +24,14 @@ class App extends React.Component {
           <button onClick={() => {eat()}}>
             吃了一坨山珍海味
           </button>
+          <button onClick={() => {eatAsync()}}>
+            等了一会，吃了一个煎饼
+          </button>
           <button onClick={() => {hungry()}}>
             饿了一天
+          </button>
+          <button onClick={() => {getArticle()}}>
+            获取文章
           </button>
         </header>
       </div>
@@ -40,4 +46,4 @@ class App extends React.Component {
 // const actionCreators = {eat,hungry}
 export default connect((state)=>{
   return {num:state}
-},{eat,hungry})(App)
+},{eat,hungry,eatAsync,getArticle})(App)
