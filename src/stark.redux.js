@@ -43,7 +43,9 @@ export const getArticle = () =>{
     setTimeout(()=>{
       // dispatch(eat('煎饼')) 
       dispatch(()=>{
-        axios.get('http://api.shudong.wang/v1/article/list')
+        axios.get('/v1/article/list').then(res=>{
+          console.log('article',res)
+        })
       }) 
     },2000)
   }
