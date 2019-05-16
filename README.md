@@ -6,7 +6,7 @@
 
 > 课程视频地址：[https://segmentfault.com/ls/1650000019154222](https://segmentfault.com/ls/1650000019154222)
 
-##【redux完全指南】课程分类
+## 【redux完全指南】课程分类
 
 * redux入门到会用
 * react 与 redux 基础架构，到迁移Rematch
@@ -14,7 +14,7 @@
 
 ## 适宜人群
 
-redux入门者
+* redux入门者
 
 ## 课程说明
     项目录制中，购买1折，录制完成后涨价。
