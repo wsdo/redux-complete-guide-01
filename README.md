@@ -5,6 +5,7 @@
 > [shudong.wang](https://shudong.wang/about)
 
 > 课程视频地址：[https://segmentfault.com/ls/1650000019154222](https://segmentfault.com/ls/1650000019154222)
+
 ##【redux完全指南】课程分类
 
 * redux入门到会用
