@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { weight } from './stark.redux'
 import { Provider } from 'react-redux'
-
+import logger from './middleware/logger'
 import thunk from 'redux-thunk'
 
-const store = createStore(weight, applyMiddleware(thunk))
+const store = createStore(weight, applyMiddleware(thunk,logger))
 
 // const render = () =>{
 ReactDOM.render(
