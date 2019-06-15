@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.4.3",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@svgr/webpack": "4.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
@@ -130,6 +131,15 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins":[
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      
+      ]
     ]
   },
   "proxy": "http://api.shudong.wang"

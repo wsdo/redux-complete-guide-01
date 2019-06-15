@@ -3,6 +3,10 @@ import logo from './logo.svg'
 import './App.css'
 import { eat, hungry, eatAsync, getArticle} from './stark.redux'
 import { connect } from 'react-redux'
+
+
+@connect(state => state, { eat, hungry, eatAsync, getArticle })
+
 class App extends React.Component {
   render () {
     const {num, eat, hungry , eatAsync, getArticle, list} = this.props
@@ -20,6 +24,7 @@ class App extends React.Component {
             <br></br>
             hi gusy， I am stark
           </p>
+          <div>装饰器模式</div>
           <a
             className='App-link'
             href='https://shudong.wang'
@@ -49,6 +54,8 @@ class App extends React.Component {
 // }
 
 // const actionCreators = {eat,hungry}
-export default connect((state)=>{
-  return {num: state.num,list:state.list}
-},{eat,hungry,eatAsync,getArticle})(App)
+// export default connect((state)=>{
+//   return {num: state.num,list:state.list}
+// },{eat,hungry,eatAsync,getArticle})(App)
+
+export default App
